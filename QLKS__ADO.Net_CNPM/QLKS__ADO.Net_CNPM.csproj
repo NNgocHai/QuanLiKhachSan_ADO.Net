@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS_Layer\BLBackup.cs" />
     <Compile Include="BS_Layer\BLDangNhap.cs" />
+    <Compile Include="BS_Layer\BLNhanVien.cs" />
+    <Compile Include="BS_Layer\BLPhong.cs" />
+    <Compile Include="BS_Layer\BLRestore.cs" />
+    <Compile Include="CSDL_KHACHSANDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSDL_KHACHSANDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DB_Layer\DBMain.cs" />
     <Compile Include="Forms\FrmDangNhap.cs">
       <SubType>Form</SubType>
@@ -60,6 +70,18 @@
     <Compile Include="Forms\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPhong.Designer.cs">
+      <DependentUpon>FrmPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmDangNhap.resx">
@@ -67,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPhong.resx">
+      <DependentUpon>FrmPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +106,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="CSDL_KHACHSANDataSet.xsc">
+      <DependentUpon>CSDL_KHACHSANDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CSDL_KHACHSANDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSDL_KHACHSANDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CSDL_KHACHSANDataSet.xss">
+      <DependentUpon>CSDL_KHACHSANDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -186,6 +225,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thiet-ke-hanh-lang-khach-san-dep-e1573263785740.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessObject\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLKS__ADO.Net_CNPM.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace QLKS__ADO.Net_CNPM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDangNhap());
+            Application.Run(new FrmMain());
         }
     }
 }

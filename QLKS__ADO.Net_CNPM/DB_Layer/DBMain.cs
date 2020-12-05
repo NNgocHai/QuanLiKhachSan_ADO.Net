@@ -10,7 +10,7 @@ namespace QLKS__ADO.Net_CNPM.DB_Layer
 {
     class DBMain
     {
-        string ConnStr = "Data Source=DESKTOP-UPQ3LBB\\NHAI;" + "Initial Catalog=QLKS_CNPM;" + "Integrated Security=True";
+        string ConnStr = "Data Source=DESKTOP-UPQ3LBB\\NHAI;" + "Initial Catalog=CSDL_KHACHSAN;" + "Integrated Security=True";
         //string ConnStr = "Data Source=LAPTOP-5RTFARAU\\TRANVANHOANG;" + "Initial Catalog=QuanLyKhachSan;" + "Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
@@ -43,8 +43,15 @@ namespace QLKS__ADO.Net_CNPM.DB_Layer
             comm.CommandType = ct;
             try
             {
-                comm.ExecuteNonQuery();
-                f = true;
+                if (comm.ExecuteNonQuery() > 0) 
+                { 
+                    f = true;
+                   
+                }
+                else
+                    error = "Không tồn tại";
+
+
             }
             catch (SqlException ex)
             {
@@ -56,9 +63,6 @@ namespace QLKS__ADO.Net_CNPM.DB_Layer
             }
             return f;
         }
-
-        public static object Instance { get; internal set; }
-
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

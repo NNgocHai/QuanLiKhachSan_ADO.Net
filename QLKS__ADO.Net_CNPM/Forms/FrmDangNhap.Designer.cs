@@ -112,6 +112,7 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnThoat
@@ -133,6 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(823, 499);
             this.Controls.Add(this.grbTTDN);
             this.Controls.Add(this.lbTitle);
