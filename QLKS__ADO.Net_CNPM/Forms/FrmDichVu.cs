@@ -16,5 +16,10 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             InitializeComponent();
         }
+
+        private void FrmDichVu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
