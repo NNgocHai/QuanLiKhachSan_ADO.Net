@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BS_Layer\BLBackup.cs" />
     <Compile Include="BS_Layer\BLDangNhap.cs" />
+    <Compile Include="BS_Layer\BLDonHang.cs" />
     <Compile Include="BS_Layer\BLNhanVien.cs" />
     <Compile Include="BS_Layer\BLPhong.cs" />
     <Compile Include="BS_Layer\BLRestore.cs" />
