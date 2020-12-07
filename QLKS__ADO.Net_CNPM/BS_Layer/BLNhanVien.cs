@@ -14,47 +14,49 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
     class BLNhanVien
     {
         DBMain db = null;
-
+        SqlCommand cmd = null;
         public BLNhanVien()
         {
             db = new DBMain();
+            cmd = new SqlCommand();
         }
         public DataSet LayNhanVien()
         {
-            return db.ExecuteQueryDataSet("select * from NHANVIEN", CommandType.Text);
+            return db.ExecuteQueryDataSet(cmd, "NHANVIEN_LayNhanVien");
         }
 
         public DataSet TimNhanVienTheoTDN(string TenDangNhap)
         {
-            return db.ExecuteQueryDataSet("select * from NHANVIEN where TENDANGNHAP LIKE N'%" + TenDangNhap + "%'", CommandType.Text);
+            cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
+            return db.ExecuteQueryDataSet(cmd, "NHANVIEN_TimKiemNhanVien");
         }
 
-        public bool ThemNhanVien(string TenDangNhap, string MatKhau, string HoTen, string DiaChi, string SDT, string EMail, string TinhTrangHD, ref string err)
+        public bool ThemNhanVien(string TenDangNhap, string MatKhau, string HoTen, string DiaChi, string SDT, string EMail, string PhanQuyen, ref string err)
         {
-            string sqlString = "Insert Into NHANVIEN Values('" + TenDangNhap.Trim()
-                                                      + "',N'" + MatKhau.Trim()
-                                                      + "',N'" + HoTen.Trim()
-                                                      + "',N'" + DiaChi.Trim()
-                                                      + "','" + SDT.Trim()
-                                                      + "',N'" + EMail.Trim()
-                                                      + "','" + TinhTrangHD.Trim() + "')";
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
+            cmd.Parameters.Add("@MatKhau", SqlDbType.NVarChar).Value = MatKhau;
+            cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar).Value = HoTen;
+            cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = DiaChi;
+            cmd.Parameters.Add("@SDT", SqlDbType.NVarChar).Value = SDT;
+            cmd.Parameters.Add("@EMail", SqlDbType.NVarChar).Value = EMail;
+            cmd.Parameters.Add("@PhanQuyen", SqlDbType.NVarChar).Value = PhanQuyen;
+            return db.ExecuteProcNonQuery(cmd, "NHANVIEN_ThemNhanVien", ref err);
         }
         public bool XoaNhanVien(ref string err, string TenDangNhap)
         {
-            string sqlString = "Delete From NHANVIEN Where TENDANGNHAP='" + TenDangNhap + "'";
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
+            return db.ExecuteProcNonQuery(cmd, "NHANVIEN_XoaNhanVien", ref err);
         }
-        public bool CapNhatNhanVien(string TenDangNhap, string MatKhau, string HoTen, string DiaChi, string SDT, string EMail, string TinhTrangHD, ref string err)
+        public bool CapNhatNhanVien(string TenDangNhap, string MatKhau, string HoTen, string DiaChi, string SDT, string EMail, string PhanQuyen, ref string err)
         {
-            string sqlString = "Update NHANVIEN Set MATKHAU=N'" + MatKhau.Trim()
-                                                               + "',HOTEN=N'" + HoTen.Trim()
-                                                               + "',DIACHI='" + DiaChi.Trim()
-                                                               + "',SDT='" + SDT.Trim()
-                                                               + "',EMAIL='" + EMail.Trim()
-                                                               + "',TINHTRANGHD='" + TinhTrangHD.Trim()
-                                                               + "' Where TENDANGNHAP='" + TenDangNhap.Trim() + "'";
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
+            cmd.Parameters.Add("@MatKhau", SqlDbType.NVarChar).Value = MatKhau;
+            cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar).Value = HoTen;
+            cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = DiaChi;
+            cmd.Parameters.Add("@SDT", SqlDbType.NVarChar).Value = SDT;
+            cmd.Parameters.Add("@EMail", SqlDbType.NVarChar).Value = EMail;
+            cmd.Parameters.Add("@PhanQuyen", SqlDbType.NVarChar).Value = PhanQuyen;
+            return db.ExecuteProcNonQuery(cmd, "NHANVIEN_CapNhatNhanVien", ref err);
         }
     }
 }

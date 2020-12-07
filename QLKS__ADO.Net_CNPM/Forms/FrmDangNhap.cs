@@ -16,7 +16,8 @@ namespace QLKS__ADO.Net_CNPM
     public partial class FrmDangNhap : Form
     {
         DataTable dtUser = null;
-        BLDangNhap user = null;
+        
+        BLDangNhap BLDN = null;
         int time = 0;
 
         public FrmDangNhap()
@@ -42,24 +43,32 @@ namespace QLKS__ADO.Net_CNPM
         {
             string user = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
+            BLDN = new BLDangNhap();
+            var phanquyen = BLDN.LayPhanQuyen(txtUser.Text.Trim());
             for (int i = 0; i < dtUser.Rows.Count; i++)
             {
                 string dataUser = dtUser.Rows[i][0].ToString().Trim();
                 string dataPassword = dtUser.Rows[i][1].ToString().Trim();
                 if (user == dataUser && password == dataPassword)
                 {
+                    if (phanquyen.Equals(1))
+                        Admin();
+                    else
+                        User();
                     FrmMain.bIsLogin = true;
-                    this.Hide();
-                    FrmMain form1 = new FrmMain();
-                    form1.ShowDialog();
-                    this.Show();
+                    this.Close();
                     return;
                 }
             }
             txtUser.Focus();
             MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //Tài khoản mặc định Username: hai, mk: 123 
+            
         }
+        public void Admin()
+        { }
+        public void User()
+        { }
+        
 
         
 
@@ -81,8 +90,8 @@ namespace QLKS__ADO.Net_CNPM
             {
                 dtUser = new DataTable();
                 dtUser.Clear();
-                user = new BLDangNhap();
-                DataSet dts = user.LayTaiKhoan();
+                BLDN = new BLDangNhap();
+                DataSet dts = BLDN.LayTaiKhoan();
                 dtUser = dts.Tables[0];
 
             }

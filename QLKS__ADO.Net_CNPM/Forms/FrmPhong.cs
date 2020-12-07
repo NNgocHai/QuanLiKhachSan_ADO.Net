@@ -17,7 +17,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         DataTable DTP = null;
         bool Them;
         string err;
-        BLPhong BLP = new BLPhong();
+        BLPhong BLP = null;
         public FrmPhong()
         {
             InitializeComponent();
@@ -38,12 +38,16 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtSoNguoiToiDa.ResetText();
             this.txtTen.ResetText();
             this.txtTinhTrang.ResetText();
+            this.txtMota.ResetText();
+            this.cbbTen.Text ="ALL";
+            this.cbbTinhTrang.Text = "ALL";
 
         }
         private void LoadData()
         {
             try
             {
+                BLP = new BLPhong();
                 DTP = new DataTable();
                 DTP.Clear();
                 DataSet ds = BLP.LayPhong();
@@ -52,6 +56,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 dgvPhong.DataSource = DTP;
                 Default_txt();
                 dgvPhong_CellClick(null, null);
+                LoadTen();
+                LoadTinhTrang();
             }
             catch (SqlException)
             {
@@ -77,8 +83,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             List<string> dsTen = new List<string>();
             dsTen.Clear();
             dsTen = BLP.LayTen();
-            cbbTinhTrang.Items.Clear();
-            cbbTinhTrang.Items.Add("ALL");
+            cbbTen.Items.Clear();
+            cbbTen.Items.Add("ALL");
 
             foreach (string Ten in dsTen)
             {
@@ -105,6 +111,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            BLP = new BLPhong();
             if (Them)
             {
                 if (this.txtMaPhong.Text == "")
@@ -117,7 +124,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 {
                     try
                     {//(string MaPhong, string Ten, string TinhTrang, string SoNguoiToiDa, string Gia, string KhuyenMai, ref string err)
-                        if (BLP.ThemPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtTinhTrang.Text, this.txtSoNguoiToiDa.Text, this.txtGia.Text, this.txtKhuyenMai.Text, ref err))
+                        if (BLP.ThemPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtGia.Text, this.txtTinhTrang.Text, this.txtSoNguoiToiDa.Text, this.txtKhuyenMai.Text, this.txtMota.Text, ref err))
                         {
                             LoadData();
                             MessageBox.Show("Đã thêm xong!");
@@ -139,7 +146,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
                 try
                 {
-                    if (BLP.CapNhatPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtTinhTrang.Text, this.txtSoNguoiToiDa.Text, this.txtGia.Text, this.txtKhuyenMai.Text, ref err))
+                    if (BLP.CapNhatPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtGia.Text, this.txtTinhTrang.Text, this.txtSoNguoiToiDa.Text,  this.txtKhuyenMai.Text, this.txtMota.Text, ref err))
                     {
                         LoadData();
                         MessageBox.Show("Đã sửa xong!");
@@ -185,6 +192,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            BLP = new BLPhong();
             try
             {
                 if (txtMaPhong.Text != "")
@@ -238,13 +246,13 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void FrmPhong_Load(object sender, EventArgs e)
         {
             LoadData();
-            LoadTen();
-            LoadTinhTrang();
+           
             
         }
 
         private void dgvPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            BLP = new BLPhong();
             try
             {
                 //Thứ tự dòng hiện hành
@@ -252,10 +260,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 //Chuyển thông tin lên panel
                 this.txtMaPhong.Text = dgvPhong.Rows[r].Cells[0].Value.ToString().Trim();
                 this.txtTen.Text = dgvPhong.Rows[r].Cells[1].Value.ToString().Trim();
-                this.txtTinhTrang.Text = dgvPhong.Rows[r].Cells[2].Value.ToString().Trim();
-                this.txtSoNguoiToiDa.Text = dgvPhong.Rows[r].Cells[3].Value.ToString().Trim();
-                this.txtGia.Text = dgvPhong.Rows[r].Cells[4].Value.ToString().Trim();
+                this.txtGia.Text = dgvPhong.Rows[r].Cells[2].Value.ToString().Trim();
+                this.txtTinhTrang.Text = dgvPhong.Rows[r].Cells[3].Value.ToString().Trim();
+                this.txtSoNguoiToiDa.Text = dgvPhong.Rows[r].Cells[4].Value.ToString().Trim();
                 this.txtKhuyenMai.Text = dgvPhong.Rows[r].Cells[5].Value.ToString().Trim();
+                this.txtMota.Text = dgvPhong.Rows[r].Cells[6].Value.ToString().Trim();
 
             }
             catch
@@ -266,6 +275,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.txtSoNguoiToiDa.Text = "";
                 this.txtGia.Text = "";
                 this.txtKhuyenMai.Text = "";
+                this.txtMota.Text = "";
             }
         }
     }

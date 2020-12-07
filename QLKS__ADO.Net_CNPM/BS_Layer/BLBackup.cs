@@ -19,7 +19,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         }
         public void Backup(string fileName, ref string err)
         {
-            string sqlString = "Backup database CSDL_KHACHSAN to disk ='" +fileName + ".bak'";
+            string sqlString = "use master Backup database CSDL_KHACHSAN to disk ='" +fileName + ".bak'";
             db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

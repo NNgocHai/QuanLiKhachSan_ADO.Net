@@ -56,17 +56,20 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
-            this.MAPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SONGUOITOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KHUYENMAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
             this.cbbTen = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtMota = new System.Windows.Forms.TextBox();
+            this.MA_PHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SONGUOITOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONG_KM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -97,50 +100,50 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             // txtKhuyenMai
             // 
-            this.txtKhuyenMai.Location = new System.Drawing.Point(565, 106);
+            this.txtKhuyenMai.Location = new System.Drawing.Point(700, 107);
             this.txtKhuyenMai.Name = "txtKhuyenMai";
-            this.txtKhuyenMai.Size = new System.Drawing.Size(100, 22);
+            this.txtKhuyenMai.Size = new System.Drawing.Size(168, 22);
             this.txtKhuyenMai.TabIndex = 94;
             // 
             // txtGia
             // 
-            this.txtGia.Location = new System.Drawing.Point(565, 65);
+            this.txtGia.Location = new System.Drawing.Point(186, 106);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(100, 22);
+            this.txtGia.Size = new System.Drawing.Size(317, 22);
             this.txtGia.TabIndex = 92;
             // 
             // txtSoNguoiToiDa
             // 
-            this.txtSoNguoiToiDa.Location = new System.Drawing.Point(566, 24);
+            this.txtSoNguoiToiDa.Location = new System.Drawing.Point(700, 63);
             this.txtSoNguoiToiDa.Name = "txtSoNguoiToiDa";
-            this.txtSoNguoiToiDa.Size = new System.Drawing.Size(100, 22);
+            this.txtSoNguoiToiDa.Size = new System.Drawing.Size(168, 22);
             this.txtSoNguoiToiDa.TabIndex = 91;
             // 
             // txtTinhTrang
             // 
-            this.txtTinhTrang.Location = new System.Drawing.Point(186, 106);
+            this.txtTinhTrang.Location = new System.Drawing.Point(700, 24);
             this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(100, 22);
+            this.txtTinhTrang.Size = new System.Drawing.Size(168, 22);
             this.txtTinhTrang.TabIndex = 90;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(186, 65);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(100, 22);
+            this.txtTen.Size = new System.Drawing.Size(317, 22);
             this.txtTen.TabIndex = 89;
             // 
             // txtMaPhong
             // 
             this.txtMaPhong.Location = new System.Drawing.Point(187, 24);
             this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(100, 22);
+            this.txtMaPhong.Size = new System.Drawing.Size(317, 22);
             this.txtMaPhong.TabIndex = 88;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(458, 111);
+            this.label12.Location = new System.Drawing.Point(593, 112);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 17);
             this.label12.TabIndex = 86;
@@ -150,7 +153,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(510, 68);
+            this.label11.Location = new System.Drawing.Point(131, 109);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 17);
             this.label11.TabIndex = 84;
@@ -160,7 +163,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 109);
+            this.label2.Location = new System.Drawing.Point(602, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 87;
@@ -170,7 +173,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(437, 31);
+            this.label7.Location = new System.Drawing.Point(571, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 17);
             this.label7.TabIndex = 83;
@@ -356,12 +359,13 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgvPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MAPHONG,
+            this.MA_PHONG,
             this.TEN,
+            this.GIA,
             this.TINHTRANG,
             this.SONGUOITOIDA,
-            this.GIA,
-            this.KHUYENMAI});
+            this.PHONG_KM,
+            this.MOTA});
             this.dgvPhong.Location = new System.Drawing.Point(7, 278);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.RowHeadersWidth = 51;
@@ -369,48 +373,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgvPhong.Size = new System.Drawing.Size(1396, 347);
             this.dgvPhong.TabIndex = 68;
             this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
-            // 
-            // MAPHONG
-            // 
-            this.MAPHONG.DataPropertyName = "MAPHONG";
-            this.MAPHONG.HeaderText = "Mã phòng";
-            this.MAPHONG.MinimumWidth = 6;
-            this.MAPHONG.Name = "MAPHONG";
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên";
-            this.TEN.MinimumWidth = 6;
-            this.TEN.Name = "TEN";
-            // 
-            // TINHTRANG
-            // 
-            this.TINHTRANG.DataPropertyName = "TINHTRANG";
-            this.TINHTRANG.HeaderText = "Tình trạng";
-            this.TINHTRANG.MinimumWidth = 6;
-            this.TINHTRANG.Name = "TINHTRANG";
-            // 
-            // SONGUOITOIDA
-            // 
-            this.SONGUOITOIDA.DataPropertyName = "SONGUOITOIDA";
-            this.SONGUOITOIDA.HeaderText = "Số người tối đa";
-            this.SONGUOITOIDA.MinimumWidth = 6;
-            this.SONGUOITOIDA.Name = "SONGUOITOIDA";
-            // 
-            // GIA
-            // 
-            this.GIA.DataPropertyName = "GIA";
-            this.GIA.HeaderText = "Giá";
-            this.GIA.MinimumWidth = 6;
-            this.GIA.Name = "GIA";
-            // 
-            // KHUYENMAI
-            // 
-            this.KHUYENMAI.DataPropertyName = "KHUYENMAI";
-            this.KHUYENMAI.HeaderText = "Khuyến mãi";
-            this.KHUYENMAI.MinimumWidth = 6;
-            this.KHUYENMAI.Name = "KHUYENMAI";
             // 
             // panel1
             // 
@@ -461,6 +423,72 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label14.TabIndex = 25;
             this.label14.Text = "Tình trạng";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(931, 24);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 17);
+            this.label15.TabIndex = 87;
+            this.label15.Text = "Mô tả";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtMota
+            // 
+            this.txtMota.Location = new System.Drawing.Point(1029, 21);
+            this.txtMota.Name = "txtMota";
+            this.txtMota.Size = new System.Drawing.Size(236, 22);
+            this.txtMota.TabIndex = 90;
+            // 
+            // MA_PHONG
+            // 
+            this.MA_PHONG.DataPropertyName = "MA_PHONG";
+            this.MA_PHONG.HeaderText = "Mã phòng";
+            this.MA_PHONG.MinimumWidth = 6;
+            this.MA_PHONG.Name = "MA_PHONG";
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên";
+            this.TEN.MinimumWidth = 6;
+            this.TEN.Name = "TEN";
+            // 
+            // GIA
+            // 
+            this.GIA.DataPropertyName = "GIA";
+            this.GIA.HeaderText = "Giá";
+            this.GIA.MinimumWidth = 6;
+            this.GIA.Name = "GIA";
+            // 
+            // TINHTRANG
+            // 
+            this.TINHTRANG.DataPropertyName = "TINHTRANG";
+            this.TINHTRANG.HeaderText = "Tình trạng";
+            this.TINHTRANG.MinimumWidth = 6;
+            this.TINHTRANG.Name = "TINHTRANG";
+            // 
+            // SONGUOITOIDA
+            // 
+            this.SONGUOITOIDA.DataPropertyName = "SONGUOITOIDA";
+            this.SONGUOITOIDA.HeaderText = "Số người tối đa";
+            this.SONGUOITOIDA.MinimumWidth = 6;
+            this.SONGUOITOIDA.Name = "SONGUOITOIDA";
+            // 
+            // PHONG_KM
+            // 
+            this.PHONG_KM.DataPropertyName = "PHONG_KM";
+            this.PHONG_KM.HeaderText = "Khuyến Mãi";
+            this.PHONG_KM.MinimumWidth = 6;
+            this.PHONG_KM.Name = "PHONG_KM";
+            // 
+            // MOTA
+            // 
+            this.MOTA.DataPropertyName = "MOTA";
+            this.MOTA.HeaderText = "Mô tả";
+            this.MOTA.MinimumWidth = 6;
+            this.MOTA.Name = "MOTA";
+            // 
             // FrmPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -472,10 +500,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.txtKhuyenMai);
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.txtSoNguoiToiDa);
+            this.Controls.Add(this.txtMota);
             this.Controls.Add(this.txtTinhTrang);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
@@ -534,16 +564,19 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAPHONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SONGUOITOIDA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KHUYENMAI;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbbTinhTrang;
         private System.Windows.Forms.ComboBox cbbTen;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtMota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PHONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SONGUOITOIDA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PHONG_KM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MOTA;
     }
 }

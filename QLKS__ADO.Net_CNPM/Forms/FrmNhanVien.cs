@@ -17,7 +17,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         DataTable DTNV = null;
         bool Them;
         string err;
-        BLNhanVien BLNV = new BLNhanVien();
+        BLNhanVien BLNV = null;
         public FrmNhanVien()
         {
             InitializeComponent();
@@ -38,7 +38,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtDiaChi.ResetText();
             this.txtSDT.ResetText();
             this.txtEmail.ResetText();
-            this.txtHD.ResetText();
+            this.txtPhanQuyen.ResetText();
+            this.txtTimKiem.ResetText();
 
         }
        
@@ -48,6 +49,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             try
             {
                 DTNV = new DataTable();
+                BLNV = new BLNhanVien();
                 DTNV.Clear();
                 DataSet ds = BLNV.LayNhanVien();
                 DTNV = ds.Tables[0];
@@ -79,6 +81,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            BLNV = new BLNhanVien();
             if (Them)
             {
                 if (this.txtTenDangNhap.Text == "")
@@ -91,7 +94,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                  {                     
                         try
                         {
-                            if (BLNV.ThemNhanVien(this.txtTenDangNhap.Text, this.txtMatKhau.Text, this.txtHoVaTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtEmail.Text, this.txtHD.Text, ref err))
+                            if (BLNV.ThemNhanVien(this.txtTenDangNhap.Text, this.txtMatKhau.Text, this.txtHoVaTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtEmail.Text, this.txtPhanQuyen.Text, ref err))
                             {
                                 LoadData();
                                 MessageBox.Show("Đã thêm xong!");
@@ -113,7 +116,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
                 try
                 {
-                    if (BLNV.CapNhatNhanVien(this.txtTenDangNhap.Text, this.txtMatKhau.Text, this.txtHoVaTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtEmail.Text, this.txtHD.Text, ref err))
+                    if (BLNV.CapNhatNhanVien(this.txtTenDangNhap.Text, this.txtMatKhau.Text, this.txtHoVaTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtEmail.Text, this.txtPhanQuyen.Text, ref err))
                     {
                         LoadData();
                         MessageBox.Show("Đã sửa xong!");
@@ -160,6 +163,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            BLNV = new BLNhanVien();
             try
             {
                 if (txtTenDangNhap.Text != "")
@@ -225,7 +229,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.txtDiaChi.Text = dgvNhanVien.Rows[r].Cells[3].Value.ToString().Trim();
                 this.txtSDT.Text = dgvNhanVien.Rows[r].Cells[4].Value.ToString().Trim();
                 this.txtEmail.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString().Trim();
-                this.txtHD.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString().Trim();
+                this.txtPhanQuyen.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString().Trim();
 
             }
             catch
@@ -236,18 +240,24 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.txtDiaChi.Text = "";
                 this.txtSDT.Text = "";
                 this.txtEmail.Text = "";
-                this.txtHD.Text = "";
+                this.txtPhanQuyen.Text = "";
 
             }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            BLNV = new BLNhanVien();
             DTNV = new DataTable();
             DTNV.Clear();
             DataSet ds = BLNV.TimNhanVienTheoTDN(txtTimKiem.Text);
             DTNV = ds.Tables[0];
             dgvNhanVien.DataSource = DTNV;
+        }
+
+        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

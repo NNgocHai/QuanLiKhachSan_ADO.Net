@@ -11,7 +11,6 @@ namespace QLKS__ADO.Net_CNPM.DB_Layer
     class DBMain
     {
         string ConnStr = "Data Source=DESKTOP-UPQ3LBB\\NHAI;" + "Initial Catalog=CSDL_KHACHSAN;" + "Integrated Security=True";
-        //string ConnStr = "Data Source=LAPTOP-5RTFARAU\\TRANVANHOANG;" + "Initial Catalog=QuanLyKhachSan;" + "Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;
@@ -20,14 +19,15 @@ namespace QLKS__ADO.Net_CNPM.DB_Layer
             conn = new SqlConnection(ConnStr);
             comm = conn.CreateCommand();
         }
-        public DataSet ExecuteQueryDataSet(string strSQL, CommandType ct)
+        public DataSet ExecuteQueryDataSet(SqlCommand cmd, string spName)
         {
             if (conn.State == ConnectionState.Open)
                 conn.Close();
             conn.Open();
-            comm.CommandText = strSQL;
-            comm.CommandType = ct;
-            da = new SqlDataAdapter(comm);
+            cmd.Connection = conn;
+            cmd.CommandText = spName;
+            cmd.CommandType = CommandType.StoredProcedure;
+            da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
@@ -173,6 +173,57 @@ namespace QLKS__ADO.Net_CNPM.DB_Layer
             }
 
             return data;
+        }
+        public bool ExecuteProcNonQuery(SqlCommand cmd, string spName, ref string error)
+        {
+            bool f = false;
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = spName;
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    f = true;
+
+                }
+                else
+                    error = "Không tồn tại";
+
+
+            }
+            catch (SqlException ex)
+            {
+                error = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return f;
+        }
+
+        public SqlDataReader MyExcuteProcReader(SqlCommand cmd, string spName)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = spName;
+            cmd.CommandType = CommandType.StoredProcedure;
+            return cmd.ExecuteReader();
+        }
+        public object MyExecuteScalar(SqlCommand cmd, string fuName)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = fuName;
+            return cmd.ExecuteScalar();
         }
     }
 }

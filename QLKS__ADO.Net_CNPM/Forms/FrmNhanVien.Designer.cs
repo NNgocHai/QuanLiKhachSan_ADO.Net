@@ -30,13 +30,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void InitializeComponent()
         {
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.TENDANGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MATKHAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TINHTRANGHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,12 +53,19 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtHD = new System.Windows.Forms.TextBox();
+            this.txtPhanQuyen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoVaTen = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.TENDANGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATKHAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHANQUYEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.DIACHI,
             this.SDT,
             this.EMAIL,
-            this.TINHTRANGHD});
+            this.PHANQUYEN});
             this.dgvNhanVien.Location = new System.Drawing.Point(12, 279);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
@@ -91,55 +91,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgvNhanVien.Size = new System.Drawing.Size(1169, 351);
             this.dgvNhanVien.TabIndex = 2;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
-            // 
-            // TENDANGNHAP
-            // 
-            this.TENDANGNHAP.DataPropertyName = "TENDANGNHAP";
-            this.TENDANGNHAP.HeaderText = "Tên đăng nhập";
-            this.TENDANGNHAP.MinimumWidth = 6;
-            this.TENDANGNHAP.Name = "TENDANGNHAP";
-            // 
-            // MATKHAU
-            // 
-            this.MATKHAU.DataPropertyName = "MATKHAU";
-            this.MATKHAU.HeaderText = "Mật khẩu";
-            this.MATKHAU.MinimumWidth = 6;
-            this.MATKHAU.Name = "MATKHAU";
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN";
-            this.HOTEN.HeaderText = "Họ tên";
-            this.HOTEN.MinimumWidth = 6;
-            this.HOTEN.Name = "HOTEN";
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.MinimumWidth = 6;
-            this.DIACHI.Name = "DIACHI";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SDT";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            // 
-            // EMAIL
-            // 
-            this.EMAIL.DataPropertyName = "EMAIL";
-            this.EMAIL.HeaderText = "EMAIL";
-            this.EMAIL.MinimumWidth = 6;
-            this.EMAIL.Name = "EMAIL";
-            // 
-            // TINHTRANGHD
-            // 
-            this.TINHTRANGHD.DataPropertyName = "TINHTRANGHD";
-            this.TINHTRANGHD.HeaderText = "Hoạt động";
-            this.TINHTRANGHD.MinimumWidth = 6;
-            this.TINHTRANGHD.Name = "TINHTRANGHD";
+            this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
             // 
             // label10
             // 
@@ -340,53 +292,53 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(851, 32);
+            this.label13.Location = new System.Drawing.Point(824, 32);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(141, 17);
+            this.label13.Size = new System.Drawing.Size(84, 17);
             this.label13.TabIndex = 63;
-            this.label13.Text = "Tình trạng hoạt động";
+            this.label13.Text = "Phân quyền";
             // 
             // txtTenDangNhap
             // 
             this.txtTenDangNhap.Location = new System.Drawing.Point(192, 25);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(100, 22);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(185, 22);
             this.txtTenDangNhap.TabIndex = 64;
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(191, 66);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(100, 22);
+            this.txtMatKhau.Size = new System.Drawing.Size(186, 22);
             this.txtMatKhau.TabIndex = 64;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(571, 25);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(100, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(196, 22);
             this.txtDiaChi.TabIndex = 64;
             // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(570, 66);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(100, 22);
+            this.txtSDT.Size = new System.Drawing.Size(196, 22);
             this.txtSDT.TabIndex = 64;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(570, 107);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.Size = new System.Drawing.Size(196, 22);
             this.txtEmail.TabIndex = 64;
             // 
-            // txtHD
+            // txtPhanQuyen
             // 
-            this.txtHD.Location = new System.Drawing.Point(998, 27);
-            this.txtHD.Name = "txtHD";
-            this.txtHD.Size = new System.Drawing.Size(100, 22);
-            this.txtHD.TabIndex = 64;
+            this.txtPhanQuyen.Location = new System.Drawing.Point(939, 32);
+            this.txtPhanQuyen.Name = "txtPhanQuyen";
+            this.txtPhanQuyen.Size = new System.Drawing.Size(100, 22);
+            this.txtPhanQuyen.TabIndex = 64;
             // 
             // label2
             // 
@@ -401,7 +353,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.txtHoVaTen.Location = new System.Drawing.Point(191, 107);
             this.txtHoVaTen.Name = "txtHoVaTen";
-            this.txtHoVaTen.Size = new System.Drawing.Size(100, 22);
+            this.txtHoVaTen.Size = new System.Drawing.Size(186, 22);
             this.txtHoVaTen.TabIndex = 64;
             // 
             // btnTimKiem
@@ -436,6 +388,55 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtTimKiem.Size = new System.Drawing.Size(209, 30);
             this.txtTimKiem.TabIndex = 66;
             // 
+            // TENDANGNHAP
+            // 
+            this.TENDANGNHAP.DataPropertyName = "TENDANGNHAP";
+            this.TENDANGNHAP.HeaderText = "Tên đăng nhập";
+            this.TENDANGNHAP.MinimumWidth = 6;
+            this.TENDANGNHAP.Name = "TENDANGNHAP";
+            // 
+            // MATKHAU
+            // 
+            this.MATKHAU.DataPropertyName = "MATKHAU";
+            this.MATKHAU.HeaderText = "Mật khẩu";
+            this.MATKHAU.MinimumWidth = 6;
+            this.MATKHAU.Name = "MATKHAU";
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN";
+            this.HOTEN.HeaderText = "Họ tên";
+            this.HOTEN.MinimumWidth = 6;
+            this.HOTEN.Name = "HOTEN";
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.MinimumWidth = 6;
+            this.DIACHI.Name = "DIACHI";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.DataPropertyName = "EMAIL";
+            this.EMAIL.HeaderText = "EMAIL";
+            this.EMAIL.MinimumWidth = 6;
+            this.EMAIL.Name = "EMAIL";
+            // 
+            // PHANQUYEN
+            // 
+            this.PHANQUYEN.DataPropertyName = "PHANQUYEN";
+            this.PHANQUYEN.HeaderText = "Phân quyền";
+            this.PHANQUYEN.MinimumWidth = 6;
+            this.PHANQUYEN.Name = "PHANQUYEN";
+            // 
             // FrmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -445,7 +446,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtHD);
+            this.Controls.Add(this.txtPhanQuyen);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtHoVaTen);
@@ -495,13 +496,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENDANGNHAP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MATKHAU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANGHD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label tctMatKhau;
         //private System.Windows.Forms.Label txtHoTen;
@@ -515,11 +509,18 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtHD;
+        private System.Windows.Forms.TextBox txtPhanQuyen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoVaTen;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENDANGNHAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATKHAU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PHANQUYEN;
     }
 }

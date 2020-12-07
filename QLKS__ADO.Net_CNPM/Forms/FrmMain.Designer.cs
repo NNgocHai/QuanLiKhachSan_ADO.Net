@@ -52,6 +52,10 @@
             this.btnNguoiDung = new DevComponents.DotNetBar.ButtonItem();
             this.rbbNguoiDung = new DevComponents.DotNetBar.RibbonBar();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.Restore = new DevComponents.DotNetBar.RibbonBar();
+            this.btnRestore = new DevComponents.DotNetBar.ButtonItem();
+            this.rbbBackup = new DevComponents.DotNetBar.RibbonBar();
+            this.btnBackup = new DevComponents.DotNetBar.ButtonItem();
             this.rbbDangXuat = new DevComponents.DotNetBar.RibbonBar();
             this.btnKHDangKy = new DevComponents.DotNetBar.ButtonItem();
             this.buttonKHNhanPhong = new DevComponents.DotNetBar.ButtonItem();
@@ -145,10 +149,6 @@
             this.itemContainer6 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer5 = new DevComponents.DotNetBar.ItemContainer();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
-            this.rbbBackup = new DevComponents.DotNetBar.RibbonBar();
-            this.btnBackup = new DevComponents.DotNetBar.ButtonItem();
-            this.Restore = new DevComponents.DotNetBar.RibbonBar();
-            this.btnRestore = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -189,7 +189,7 @@
             this.buttonPhong});
             this.rbbPhong.Location = new System.Drawing.Point(157, 0);
             this.rbbPhong.Name = "rbbPhong";
-            this.rbbPhong.Size = new System.Drawing.Size(71, 149);
+            this.rbbPhong.Size = new System.Drawing.Size(71, 93);
             this.rbbPhong.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbPhong.TabIndex = 2;
             this.rbbPhong.Text = "Phòng";
@@ -226,7 +226,7 @@
             this.btnBooking});
             this.rbbBooking.Location = new System.Drawing.Point(228, 0);
             this.rbbBooking.Name = "rbbBooking";
-            this.rbbBooking.Size = new System.Drawing.Size(90, 149);
+            this.rbbBooking.Size = new System.Drawing.Size(90, 93);
             this.rbbBooking.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbBooking.TabIndex = 3;
             this.rbbBooking.Text = "Booking";
@@ -263,7 +263,7 @@
             this.btnNhanPhong});
             this.rbbNhanPhong.Location = new System.Drawing.Point(318, 0);
             this.rbbNhanPhong.Name = "rbbNhanPhong";
-            this.rbbNhanPhong.Size = new System.Drawing.Size(95, 149);
+            this.rbbNhanPhong.Size = new System.Drawing.Size(95, 93);
             this.rbbNhanPhong.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbNhanPhong.TabIndex = 4;
             this.rbbNhanPhong.Text = "Nhận phòng";
@@ -300,7 +300,7 @@
             this.btnTraPhong});
             this.rbbTraPhong.Location = new System.Drawing.Point(413, 0);
             this.rbbTraPhong.Name = "rbbTraPhong";
-            this.rbbTraPhong.Size = new System.Drawing.Size(85, 149);
+            this.rbbTraPhong.Size = new System.Drawing.Size(85, 93);
             this.rbbTraPhong.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbTraPhong.TabIndex = 5;
             this.rbbTraPhong.Text = "Trả phòng";
@@ -323,10 +323,10 @@
             this.ribbonPanel2.Controls.Add(this.rbbDichVu);
             this.ribbonPanel2.Controls.Add(this.rbbKhachHang);
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(1016, 152);
+            this.ribbonPanel2.Size = new System.Drawing.Size(1016, 96);
             // 
             // 
             // 
@@ -359,7 +359,7 @@
             this.buttonDichVu});
             this.rbbDichVu.Location = new System.Drawing.Point(97, 0);
             this.rbbDichVu.Name = "rbbDichVu";
-            this.rbbDichVu.Size = new System.Drawing.Size(60, 149);
+            this.rbbDichVu.Size = new System.Drawing.Size(60, 93);
             this.rbbDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbDichVu.TabIndex = 1;
             this.rbbDichVu.Text = "Dịch vụ";
@@ -395,7 +395,7 @@
             this.btnKhachHang});
             this.rbbKhachHang.Location = new System.Drawing.Point(3, 0);
             this.rbbKhachHang.Name = "rbbKhachHang";
-            this.rbbKhachHang.Size = new System.Drawing.Size(94, 149);
+            this.rbbKhachHang.Size = new System.Drawing.Size(94, 93);
             this.rbbKhachHang.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbKhachHang.TabIndex = 0;
             this.rbbKhachHang.Text = "Khách hàng";
@@ -560,6 +560,80 @@
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
+            // 
+            // Restore
+            // 
+            this.Restore.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.Restore.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.Restore.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.Restore.ContainerControlProcessDialogKey = true;
+            this.Restore.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Restore.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnRestore});
+            this.Restore.Location = new System.Drawing.Point(413, 0);
+            this.Restore.Name = "Restore";
+            this.Restore.Size = new System.Drawing.Size(77, 93);
+            this.Restore.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.Restore.TabIndex = 5;
+            this.Restore.Text = "Restore ";
+            // 
+            // 
+            // 
+            this.Restore.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.Restore.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.SubItemsExpandWidth = 14;
+            this.btnRestore.Text = "Restore";
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // rbbBackup
+            // 
+            this.rbbBackup.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.rbbBackup.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbbBackup.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbbBackup.ContainerControlProcessDialogKey = true;
+            this.rbbBackup.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbbBackup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnBackup});
+            this.rbbBackup.Location = new System.Drawing.Point(347, 0);
+            this.rbbBackup.Name = "rbbBackup";
+            this.rbbBackup.Size = new System.Drawing.Size(66, 93);
+            this.rbbBackup.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.rbbBackup.TabIndex = 4;
+            this.rbbBackup.Text = "Back up";
+            // 
+            // 
+            // 
+            this.rbbBackup.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbbBackup.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.SubItemsExpandWidth = 14;
+            this.btnBackup.Text = "Back up";
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // rbbDangXuat
             // 
@@ -1351,7 +1425,7 @@
             this.lvPhong.LargeImageList = this.imageList1;
             this.lvPhong.Location = new System.Drawing.Point(5, 155);
             this.lvPhong.Name = "lvPhong";
-            this.lvPhong.Size = new System.Drawing.Size(1016, 571);
+            this.lvPhong.Size = new System.Drawing.Size(1016, 567);
             this.lvPhong.SmallImageList = this.imageList1;
             this.lvPhong.TabIndex = 8;
             this.lvPhong.UseCompatibleStateImageBehavior = false;
@@ -1363,6 +1437,7 @@
             // 
             // ribbonControl2
             // 
+            this.ribbonControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             // 
             // 
             // 
@@ -1660,85 +1735,11 @@
             // 
             this.qatCustomizeItem1.Name = "qatCustomizeItem1";
             // 
-            // rbbBackup
-            // 
-            this.rbbBackup.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.rbbBackup.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rbbBackup.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rbbBackup.ContainerControlProcessDialogKey = true;
-            this.rbbBackup.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbbBackup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnBackup});
-            this.rbbBackup.Location = new System.Drawing.Point(347, 0);
-            this.rbbBackup.Name = "rbbBackup";
-            this.rbbBackup.Size = new System.Drawing.Size(66, 93);
-            this.rbbBackup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.rbbBackup.TabIndex = 4;
-            this.rbbBackup.Text = "Back up";
-            // 
-            // 
-            // 
-            this.rbbBackup.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rbbBackup.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.SubItemsExpandWidth = 14;
-            this.btnBackup.Text = "Back up";
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
-            // Restore
-            // 
-            this.Restore.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.Restore.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.Restore.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.Restore.ContainerControlProcessDialogKey = true;
-            this.Restore.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Restore.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnRestore});
-            this.Restore.Location = new System.Drawing.Point(413, 0);
-            this.Restore.Name = "Restore";
-            this.Restore.Size = new System.Drawing.Size(77, 93);
-            this.Restore.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.Restore.TabIndex = 5;
-            this.Restore.Text = "Restore ";
-            // 
-            // 
-            // 
-            this.Restore.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.Restore.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.SubItemsExpandWidth = 14;
-            this.btnRestore.Text = "Restore";
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 728);
+            this.ClientSize = new System.Drawing.Size(1026, 724);
             this.Controls.Add(this.lvPhong);
             this.Controls.Add(this.ribbonControl2);
             this.Name = "FrmMain";
