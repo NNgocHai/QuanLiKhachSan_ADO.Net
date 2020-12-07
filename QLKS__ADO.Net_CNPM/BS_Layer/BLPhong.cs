@@ -14,7 +14,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
     {
         
         DBMain db = null;
-        SqlCommand cmd = new SqlCommand();
+        SqlCommand cmd = null;
         public BLPhong()
         {
             db = new DBMain();
@@ -59,8 +59,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         {
             List<string> dsTinhTrang = new List<string>();
             dsTinhTrang.Clear();
-            string selectcomm = "select DISTINCT TinhTrang from PHONG";
-            SqlDataReader reader = db.MyExcuteReader(selectcomm, CommandType.Text);
+            SqlDataReader reader = db.MyExcuteProcReader(cmd, "PHONG_LayTinhTrang");
             while (reader.Read())
             {
                 dsTinhTrang.Add(reader.GetString(0));
@@ -72,9 +71,8 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         public List<string> LayTen()
         {
             List<string> dsTen = new List<string>();
-            dsTen.Clear();
-            string selectcomm = "select DISTINCT Ten from PHONG";
-            SqlDataReader reader = db.MyExcuteReader(selectcomm, CommandType.Text);
+            dsTen.Clear();        
+            SqlDataReader reader = db.MyExcuteProcReader(cmd, "PHONG_LayTen");
             while (reader.Read())
             {
                 dsTen.Add(reader.GetString(0));
@@ -85,28 +83,9 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         }
         public DataSet TimKiemPhong(string TinhTrang, string Ten, ref string err)
         {
-            string sqlstring = "select * from PHONG";
-            if (TinhTrang != "ALL" && Ten == "ALL")
-            {
-
-                sqlstring = " select * from PHONG Where TinhTrang=N'"+ TinhTrang +"'";
-
-
-            }
-            else if (TinhTrang == "ALL" && Ten != "ALL")
-            {
-
-                    sqlstring = " select * from PHONG Where Ten=N'" + Ten + "'";
-
-            }
-            else if (TinhTrang == "ALL" && Ten == "ALL")
-            {
-                sqlstring = " select * from PHONG" ;
-            }
-            else
-                sqlstring = " select * from PHONG Where TinhTrang=N'" + TinhTrang + "'and Ten=N'" + Ten + "'";
-
-            return db.ExecuteQueryDataSet(cmd,sqlstring);
+            cmd.Parameters.Add("@tinhtrang", SqlDbType.VarChar).Value = TinhTrang;
+            cmd.Parameters.Add("@ten", SqlDbType.NVarChar).Value = Ten;
+            return db.ExecuteQueryDataSet(cmd, "PHONG_TimKiemPhong");
         }
 
     }

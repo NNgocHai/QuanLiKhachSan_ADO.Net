@@ -66,6 +66,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         private void LoadTinhTrang()
         {
+            //BLPhong BLP = new BLPhong();
             List<string> dsTrangThai = new List<string>();
             dsTrangThai.Clear();
             dsTrangThai = BLP.LayTinhTrang();
@@ -80,6 +81,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void LoadTen()
         {
+            BLPhong BLP = new BLPhong();
             List<string> dsTen = new List<string>();
             dsTen.Clear();
             dsTen = BLP.LayTen();
@@ -93,6 +95,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+                BLPhong BLP = new BLPhong();
                 DTP = new DataTable();
                 DTP.Clear();
                 DataSet ds = new DataSet();
