@@ -439,7 +439,7 @@
             this.btnDangNhap});
             this.rbbDanhNhap.Location = new System.Drawing.Point(3, 0);
             this.rbbDanhNhap.Name = "rbbDanhNhap";
-            this.rbbDanhNhap.Size = new System.Drawing.Size(85, 93);
+            this.rbbDanhNhap.Size = new System.Drawing.Size(85, 149);
             this.rbbDanhNhap.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbDanhNhap.TabIndex = 0;
             this.rbbDanhNhap.Text = "Đăng nhập";
@@ -483,7 +483,7 @@
             this.btnDoiMatKhau});
             this.rbbDoiMatKhau.Location = new System.Drawing.Point(176, 0);
             this.rbbDoiMatKhau.Name = "rbbDoiMatKhau";
-            this.rbbDoiMatKhau.Size = new System.Drawing.Size(94, 93);
+            this.rbbDoiMatKhau.Size = new System.Drawing.Size(94, 149);
             this.rbbDoiMatKhau.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbDoiMatKhau.TabIndex = 2;
             this.rbbDoiMatKhau.Text = "Đổi mật khẩu";
@@ -520,7 +520,7 @@
             this.btnNguoiDung});
             this.rbbNguoiDung.Location = new System.Drawing.Point(270, 0);
             this.rbbNguoiDung.Name = "rbbNguoiDung";
-            this.rbbNguoiDung.Size = new System.Drawing.Size(77, 93);
+            this.rbbNguoiDung.Size = new System.Drawing.Size(77, 149);
             this.rbbNguoiDung.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbNguoiDung.TabIndex = 3;
             this.rbbNguoiDung.Text = "Người dùng";
@@ -543,10 +543,10 @@
             this.ribbonPanel1.Controls.Add(this.rbbDangXuat);
             this.ribbonPanel1.Controls.Add(this.rbbDanhNhap);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 56);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1016, 96);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1016, 152);
             // 
             // 
             // 
@@ -560,6 +560,7 @@
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = true;
             // 
             // Restore
             // 
@@ -578,7 +579,7 @@
             this.btnRestore});
             this.Restore.Location = new System.Drawing.Point(413, 0);
             this.Restore.Name = "Restore";
-            this.Restore.Size = new System.Drawing.Size(77, 93);
+            this.Restore.Size = new System.Drawing.Size(77, 149);
             this.Restore.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.Restore.TabIndex = 5;
             this.Restore.Text = "Restore ";
@@ -615,7 +616,7 @@
             this.btnBackup});
             this.rbbBackup.Location = new System.Drawing.Point(347, 0);
             this.rbbBackup.Name = "rbbBackup";
-            this.rbbBackup.Size = new System.Drawing.Size(66, 93);
+            this.rbbBackup.Size = new System.Drawing.Size(66, 149);
             this.rbbBackup.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbBackup.TabIndex = 4;
             this.rbbBackup.Text = "Back up";
@@ -652,7 +653,7 @@
             this.btnDangXuat});
             this.rbbDangXuat.Location = new System.Drawing.Point(88, 0);
             this.rbbDangXuat.Name = "rbbDangXuat";
-            this.rbbDangXuat.Size = new System.Drawing.Size(88, 93);
+            this.rbbDangXuat.Size = new System.Drawing.Size(88, 149);
             this.rbbDangXuat.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbDangXuat.TabIndex = 1;
             this.rbbDangXuat.Text = "Đăng xuất";
@@ -1425,7 +1426,7 @@
             this.lvPhong.LargeImageList = this.imageList1;
             this.lvPhong.Location = new System.Drawing.Point(5, 155);
             this.lvPhong.Name = "lvPhong";
-            this.lvPhong.Size = new System.Drawing.Size(1016, 567);
+            this.lvPhong.Size = new System.Drawing.Size(1016, 565);
             this.lvPhong.SmallImageList = this.imageList1;
             this.lvPhong.TabIndex = 8;
             this.lvPhong.UseCompatibleStateImageBehavior = false;
@@ -1739,7 +1740,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 724);
+            this.ClientSize = new System.Drawing.Size(1026, 722);
             this.Controls.Add(this.lvPhong);
             this.Controls.Add(this.ribbonControl2);
             this.Name = "FrmMain";
