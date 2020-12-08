@@ -1,8 +1,10 @@
 ﻿using QLKS__ADO.Net_CNPM.BS_Layer;
+using QLKS__ADO.Net_CNPM.BusinessObject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,10 +18,50 @@ namespace QLKS__ADO.Net_CNPM.Forms
     {
         string err;
         public static bool bIsLogin = false;
-
+        DataTable DTP = null;
+        BLPhong BLP = null;
         public FrmMain()
         {
             InitializeComponent();
+        }
+        public void LoadData()
+        {
+            try
+            {
+                DTP = new DataTable();
+                BLP = new BLPhong();
+                this.lvPhong.Items.Clear();
+                DTP.Clear();
+                DataSet ds = BLP.LayPhong();
+                DTP = ds.Tables[0];
+                foreach (DataRow dr in DTP.Rows)
+                {
+                    Phong Phong = new Phong();
+                    Phong.Ma_Phong = (string)dr.ItemArray[0];
+                    Phong.TinhTrang = (string)dr.ItemArray[3];
+                    ListViewItem item = new ListViewItem(Phong.Ma_Phong);
+                    if(Phong.TinhTrang == "1")//Phòng đã có người roi
+                    {
+                        item.ImageIndex = 1;
+                    }
+                    else if (Phong.TinhTrang == "2")//Phòng đã được book
+                    {
+                        item.ImageIndex = 2;
+                    }
+                    else //Phòng chưa có người đặt
+                    {
+                        item.ImageIndex = 0;
+                    }
+
+                    lvPhong.Items.Add(item);
+                }
+
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không lấy được nội dung trong bảng PHONG. Lỗi rồi!!!");
+            }
         }
 
         private void pnlMenu_Paint(object sender, PaintEventArgs e)
@@ -29,33 +71,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            //Default();
-/*            PhongData data = new PhongData();
-            lvPhong.Items.Clear();
-            foreach (DataRow dr in data.LayMaPhong().Rows)
-            {
-                PhongInFo phong = new PhongInFo();
-                phong.MaLoaiPhong = (string)dr.ItemArray[1];
-                phong.MaPhong = (string)dr.ItemArray[0];
-                phong.TinhTrangPhong = (int)dr.ItemArray[2];
-                ListViewItem item = new ListViewItem(phong.MaPhong);
-
-                if (phong.TinhTrangPhong == 1)
-                {
-                    item.ImageIndex = 0;
-
-                }
-                else if (phong.TinhTrangPhong == 2)
-                {
-                    item.ImageIndex = 1;
-                }
-                else
-                {
-                    item.ImageIndex = 2;
-                }
-
-                listViewEx1.Items.Add(item);*/
-            }
+            LoadData();
+            
+        }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -98,24 +116,35 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-    }
-    /*private void lbUser_Click(object sender, EventArgs e)
-    {
-*//*            pnlMain.BackgroundImage = null;
 
-            FrmNhanVien frmNhanVien = new FrmNhanVien();
-            this.pnlMain.Controls.Clear();
-            frmNhanVien.TopLevel = false;
-            frmNhanVien.AutoScroll = true;
-            pnlMain.Controls.Add(frmNhanVien);
-            frmNhanVien.Dock = DockStyle.Fill;
-            frmNhanVien.FormBorderStyle = FormBorderStyle.None;
+        private void lvPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadData();
+        }
 
-            frmNhanVien.Location = new Point(
-            this.pnlMain.Width / 2 - frmNhanVien.Size.Width / 2,
-            this.pnlMain.Height / 2 - frmNhanVien.Size.Height / 2);
-            frmNhanVien.Anchor = AnchorStyles.None;
+        private void ToolStripItemDangKy_Click(object sender, EventArgs e)
+        {
 
-            frmNhanVien.Show();*//*
-        }*/  
+        }
+
+        private void ToolStripItemNhanPhong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToolStripItemTraPhong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToolStripItemThongTinPhong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToolStripItemCapNhat_Click(object sender, EventArgs e)
+        {
+
+        }
+    } 
 }
