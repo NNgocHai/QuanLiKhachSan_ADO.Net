@@ -413,6 +413,7 @@
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.SubItemsExpandWidth = 14;
             this.btnKhachHang.Text = "DS Khách hàng";
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // btnDangNhap
             // 
@@ -1431,7 +1432,7 @@
             this.lvPhong.LargeImageList = this.imageList1;
             this.lvPhong.Location = new System.Drawing.Point(5, 155);
             this.lvPhong.Name = "lvPhong";
-            this.lvPhong.Size = new System.Drawing.Size(1016, 555);
+            this.lvPhong.Size = new System.Drawing.Size(1016, 553);
             this.lvPhong.SmallImageList = this.imageList1;
             this.lvPhong.TabIndex = 8;
             this.lvPhong.UseCompatibleStateImageBehavior = false;
@@ -1746,7 +1747,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 712);
+            this.ClientSize = new System.Drawing.Size(1026, 710);
             this.Controls.Add(this.lvPhong);
             this.Controls.Add(this.ribbonControl2);
             this.Name = "FrmMain";

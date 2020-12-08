@@ -152,5 +152,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
             FrmDichVu frmDichVu = new FrmDichVu();
             frmDichVu.ShowDialog();
         }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            FrmKhachHang frmKhachHang = new FrmKhachHang();
+            frmKhachHang.ShowDialog();
+        }
     } 
 }

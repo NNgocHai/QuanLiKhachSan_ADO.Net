@@ -66,7 +66,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         private void LoadTinhTrang()
         {
-            //BLPhong BLP = new BLPhong();
+            BLPhong BLP = new BLPhong();
             List<string> dsTrangThai = new List<string>();
             dsTrangThai.Clear();
             dsTrangThai = BLP.LayTinhTrang();

@@ -47,3 +47,4 @@ C:\QuanLiKhachSan_ADO.Net\QLKS__ADO.Net_CNPM\obj\Debug\QLKS__ADO.Net_CNPM.exe
 C:\QuanLiKhachSan_ADO.Net\QLKS__ADO.Net_CNPM\obj\Debug\QLKS__ADO.Net_CNPM.pdb
 C:\QuanLiKhachSan_ADO.Net\QLKS__ADO.Net_CNPM\obj\Debug\QLKS__ADO.Net_CNPM.Forms.FrmDichVu.resources
 C:\Users\Administrator\Desktop\QuanLiKhachSan_ADO.Net\QLKS__ADO.Net_CNPM\obj\Debug\QLKS__ADO.Net_CNPM.Forms.FrmDichVu.resources
+C:\Users\Administrator\Desktop\QuanLiKhachSan_ADO.Net\QLKS__ADO.Net_CNPM\obj\Debug\QLKS__ADO.Net_CNPM.Forms.FrmKhachHang.resources

@@ -29,7 +29,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@hotenkh", SqlDbType.NVarChar).Value = Ten;
             cmd.Parameters.Add("@diachikh", SqlDbType.NVarChar).Value = DiaChi;
             cmd.Parameters.Add("@sdtkh", SqlDbType.NVarChar).Value = SDT;
-            cmd.Parameters.Add("@cmnndkh", SqlDbType.NVarChar).Value = CMND;
+            cmd.Parameters.Add("@cmndkh", SqlDbType.NVarChar).Value = CMND;
             cmd.Parameters.Add("@gtkh", SqlDbType.NVarChar).Value = GioiTinh;
             cmd.Parameters.Add("@tinhtrang", SqlDbType.NVarChar).Value = TinhTrang;
             return db.ExecuteProcNonQuery(cmd, "KHACHHANG_ThemKhachHang", ref err);
@@ -41,7 +41,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@hotenkh", SqlDbType.NVarChar).Value = Ten;
             cmd.Parameters.Add("@diachikh", SqlDbType.NVarChar).Value = DiaChi;
             cmd.Parameters.Add("@sdtkh", SqlDbType.NVarChar).Value = SDT;
-            cmd.Parameters.Add("@cmnndkh", SqlDbType.NVarChar).Value = CMND;
+            cmd.Parameters.Add("@cmndkh", SqlDbType.NVarChar).Value = CMND;
             cmd.Parameters.Add("@gtkh", SqlDbType.NVarChar).Value = GioiTinh;
             cmd.Parameters.Add("@tinhtrang", SqlDbType.NVarChar).Value = TinhTrang;
             return db.ExecuteProcNonQuery(cmd, "KHACHHANG_CapNhatKhachHang", ref err);
@@ -84,10 +84,10 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         {
             cmd.Parameters.Add("@tinhtrang", SqlDbType.VarChar).Value = TinhTrang;
             cmd.Parameters.Add("@gtkh", SqlDbType.NVarChar).Value = GioiTinh;
-            return db.ExecuteQueryDataSet(cmd, "KHACHHANG_TimKiemKhachHang_TheoTT_GT");
+            return db.ExecuteQueryDataSet(cmd, "KHACHHANG_TimKiemKhachHang_TheoGT_TT");
         }
 
-        public DataSet TimKiemKhachHangTheoTen(string TenKhachHang)
+        public DataSet TimKiemKhachHangTheoTen(string TenKhachHang, ref string err)
         {
             cmd.Parameters.Add("@tenkh", SqlDbType.VarChar).Value = TenKhachHang;
             return db.ExecuteQueryDataSet(cmd, "KHACHHANG_TimKiemKhachHang_TheoTen");
