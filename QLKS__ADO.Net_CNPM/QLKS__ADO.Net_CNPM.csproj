@@ -54,6 +54,7 @@
     <Compile Include="BS_Layer\BLNhanVien.cs" />
     <Compile Include="BS_Layer\BLPhong.cs" />
     <Compile Include="BS_Layer\BLRestore.cs" />
+    <Compile Include="BusinessObject\Phong.cs" />
     <Compile Include="CSDL_KHACHSANDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,7 +230,13 @@
     <None Include="Resources\thiet-ke-hanh-lang-khach-san-dep-e1573263785740.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BusinessObject\" />
+    <None Include="Resources\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LaST %28Cobalt%29 RTF File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Manager.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -160,11 +160,20 @@
   <data name="FineIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FineIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="infok_vn_27fkhach_san_marguerite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\infok.vn-27fkhach-san-marguerite.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KHicon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KHicon2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LaST__Cobalt__RTF_File" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LaST (Cobalt) RTF File.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_Manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login Manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Name2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Name2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
