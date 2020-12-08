@@ -40,7 +40,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                     Phong.Ma_Phong = (string)dr.ItemArray[0];
                     Phong.TinhTrang = (string)dr.ItemArray[3];
                     ListViewItem item = new ListViewItem(Phong.Ma_Phong);
-                    if(Phong.TinhTrang == "1")//Phòng đã có người
+                    if(Phong.TinhTrang == "1")//Phòng đã có người roi
                     {
                         item.ImageIndex = 1;
                     }
