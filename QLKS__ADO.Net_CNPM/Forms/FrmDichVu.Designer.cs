@@ -51,7 +51,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.MA_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENDICHVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
@@ -296,7 +296,7 @@
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MA_DV,
-            this.TENDICHVU,
+            this.TEN,
             this.GIA});
             this.dgvDichVu.Location = new System.Drawing.Point(1, 277);
             this.dgvDichVu.Name = "dgvDichVu";
@@ -313,12 +313,12 @@
             this.MA_DV.MinimumWidth = 6;
             this.MA_DV.Name = "MA_DV";
             // 
-            // TENDICHVU
+            // TEN
             // 
-            this.TENDICHVU.DataPropertyName = "TENDICHVU";
-            this.TENDICHVU.HeaderText = "Tên dịch vụ";
-            this.TENDICHVU.MinimumWidth = 6;
-            this.TENDICHVU.Name = "TENDICHVU";
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên dịch vụ";
+            this.TEN.MinimumWidth = 6;
+            this.TEN.Name = "TEN";
             // 
             // GIA
             // 
@@ -388,7 +388,7 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_DV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENDICHVU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIA;
     }
 }

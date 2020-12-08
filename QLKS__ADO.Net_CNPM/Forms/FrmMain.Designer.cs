@@ -376,6 +376,7 @@
             this.buttonDichVu.Name = "buttonDichVu";
             this.buttonDichVu.SubItemsExpandWidth = 14;
             this.buttonDichVu.Text = "Dịch vụ";
+            this.buttonDichVu.Click += new System.EventHandler(this.buttonDichVu_Click);
             // 
             // rbbKhachHang
             // 
@@ -1430,11 +1431,7 @@
             this.lvPhong.LargeImageList = this.imageList1;
             this.lvPhong.Location = new System.Drawing.Point(5, 155);
             this.lvPhong.Name = "lvPhong";
-<<<<<<< HEAD
-            this.lvPhong.Size = new System.Drawing.Size(1016, 561);
-=======
-            this.lvPhong.Size = new System.Drawing.Size(1016, 557);
->>>>>>> master
+            this.lvPhong.Size = new System.Drawing.Size(1016, 555);
             this.lvPhong.SmallImageList = this.imageList1;
             this.lvPhong.TabIndex = 8;
             this.lvPhong.UseCompatibleStateImageBehavior = false;
@@ -1749,11 +1746,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1026, 718);
-=======
-            this.ClientSize = new System.Drawing.Size(1026, 714);
->>>>>>> master
+            this.ClientSize = new System.Drawing.Size(1026, 712);
             this.Controls.Add(this.lvPhong);
             this.Controls.Add(this.ribbonControl2);
             this.Name = "FrmMain";
