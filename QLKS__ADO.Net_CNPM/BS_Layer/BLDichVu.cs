@@ -22,7 +22,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         {
             return db.ExecuteQueryDataSet(cmd, "DICHVU_LayDichVu");
         }
-        public bool ThemPhong(string MaDichVu, string TenDV, string Gia, ref string err)
+        public bool ThemDichVu(string MaDichVu, string TenDV, string Gia, ref string err)
         {
             cmd.Parameters.Add("@madv", SqlDbType.VarChar).Value = MaDichVu;
             cmd.Parameters.Add("@tendv", SqlDbType.NVarChar).Value = TenDV;
@@ -42,7 +42,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@gia", SqlDbType.NVarChar).Value = Gia;
             return db.ExecuteProcNonQuery(cmd, "DICHVU_CapNhatDichVu", ref err);
         }
-        public DataSet TimKiemDichVu(string TenDV, ref string err)
+        public DataSet TimKiemDichVu(string TenDV)
         {
             cmd.Parameters.Add("@tendv", SqlDbType.NVarChar).Value = TenDV;
             return db.ExecuteQueryDataSet(cmd, "DICHVU_TimKiemDichVu");
